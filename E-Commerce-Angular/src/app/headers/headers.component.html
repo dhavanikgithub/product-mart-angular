@@ -1,0 +1,27 @@
+<div class="container">
+    <nav class="nav">
+        
+        <div [ngSwitch]="menuType" class="list">
+            <ul *ngSwitchCase="'default'">
+                <li routerLink="/">Products</li>
+                <li>Cart</li>
+                <li routerLink="/signup">Signup</li>  
+            </ul>
+
+            <ul *ngSwitchCase="'customer'">
+                <li routerLink="/">Products</li>
+                <li routerLink="/cart">Cart</li>
+                <li routerLink="/orders">Orders</li>
+                <li (click)="onCustomerLogout()">Logout</li>   
+                <div class="dropdown">
+                    <li (mouseenter)="isHidden = !isHidden" (mouseleave)="isHidden = !isHidden" class="dropbtn"><i class="fa fa-info-circle"></i></li>
+                    <div class="dropdown-content">
+                        <a *ngIf="isHidden">&nbsp; &nbsp;{{userName | titlecase}}!</a>
+                    </div>    
+                </div> 
+            </ul>
+            
+        </div>
+    </nav>
+</div>
+

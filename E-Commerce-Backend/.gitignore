@@ -1,0 +1,5 @@
+node_modules
+.env
+E-Commerce-Angular/.vscode/extensions.json
+E-Commerce-Angular/.vscode/launch.json
+E-Commerce-Angular/.vscode/tasks.json
