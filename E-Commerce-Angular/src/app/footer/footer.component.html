@@ -1,0 +1,25 @@
+<footer class="bg-dark text-white px-5 mt-auto">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col text-center py-3">
+                <h5 class="text-white">Product Mart</h5>
+                <div class="d-flex justify-content-center mt-3">
+                    <a class="nav-link text-white mx-4" routerLink="/" routerLinkActive="active">Home</a>
+                    <a class="nav-link text-white mx-4" routerLink="/cart" routerLinkActive="active">Cart</a>
+                    <ng-container *ngIf="customerStore !== null">
+                        <a class="nav-link text-white mx-4" routerLink="/orders" routerLinkActive="active">Orders</a>
+                    </ng-container>
+                    <ng-container *ngIf="customerStore === null">
+                        <a class="nav-link text-white mx-4" href="/signup">Login</a>
+                        <a class="nav-link text-white mx-4" href="/signup">Register</a>
+                    </ng-container>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col text-center py-3">
+                &copy; {{ currentYear() }} Product Mart. All Rights Reserved.
+            </div>
+        </div>
+    </div>
+</footer>

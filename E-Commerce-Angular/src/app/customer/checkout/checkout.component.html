@@ -1,29 +1,28 @@
-<h1 class="header">Address And Payment</h1>
-<div class="login-box">
-  <h2>Add Shipping Address</h2>
-  <form [formGroup]="addressForm" (ngSubmit)="submitOrder()">
-    <div class="user-box"><input formControlName="email" type="text" name="email"  placeholder="Enter Your Email" />
-    </div>
-    <div class="user-box">
-      <textarea formControlName="address" name="address" cols="30" rows="2" placeholder="Enter Your Address"></textarea>
-    </div>
-    <div class="user-box"><input formControlName="contact" type="text" name="contact"  placeholder="Enter Your Contact" />
-    </div>
-    <button style="width: 1px; height: 1px; cursor: pointer;"><a>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      Submit
-    </a></button>
-  </form>
-</div>
+<div class="container mt-5">
+  <h3 class="text-center mb-4">Shipping Details And Payment</h3>
 
-<div class="pay-method">
-    <h2>Total Amount: <b style="text-shadow: 0 0 3px #FF0000, 0 0 5px #b86822;">&nbsp;₹ {{totalPrice}}</b></h2>
-    <h2>Payment Method: <b>&nbsp;Pay On Delivery</b></h2>
-</div>
+  <div class="card shadow-sm p-4 mb-4">
+    <h2 class="card-title mb-3">Shipping Details</h2>
+    <form [formGroup]="addressForm" (ngSubmit)="submitOrder()">
+      <div class="mb-3">
+        <input formControlName="email" type="text" class="form-control" placeholder="Enter Your Email" />
+      </div>
+      <div class="mb-3">
+        <textarea formControlName="address" class="form-control" rows="2" placeholder="Enter Your Address"></textarea>
+      </div>
+      <div class="mb-3">
+        <input formControlName="contact" type="text" class="form-control" placeholder="Enter Your Contact" />
+      </div>
+      <button type="submit" class="btn btn-primary w-100">Submit</button>
+    </form>
+  </div>
 
-<div class="order-msg">
-  <h2>{{orderMsg}}</h2>
+  <div class="card shadow-sm p-4 mb-4">
+    <h3>Total Amount: <b>&nbsp;₹ {{totalPrice!! | round:2}}</b></h3>
+    <h3>Payment Method: <b>&nbsp;Cash On Delivery</b></h3>
+  </div>
+
+  <div class="text-center">
+    <h2>{{orderMsg}}</h2>
+  </div>
 </div>

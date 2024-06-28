@@ -9,6 +9,7 @@ import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { OrderComponent } from './order/order.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RoundPipe } from '../round.pipe';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     SearchComponent,
     CartComponent,
     CheckoutComponent,
-    OrderComponent
+    OrderComponent,
+    RoundPipe
   ],
   imports: [
     CommonModule,

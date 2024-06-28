@@ -25,4 +25,7 @@ export class ShopComponent implements OnInit{
       this.shopService.getCartCount()
     }
   } 
+  gettotalRatings(item:Product): number {
+    return Number(item.totalRatings);
+  }
 }

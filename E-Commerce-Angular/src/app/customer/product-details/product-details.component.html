@@ -1,29 +1,25 @@
-<div class="container">
-
-    <h1 class="heading">{{productDetails?.title}}</h1>
-
-    <div class="box-container">
-
-        <div class="box">
-            <img src="{{productDetails?.image}}" alt="">
-            <h2>Price: ₹ {{productDetails?.price}}</h2>
-
-            <p>Category: {{productDetails?.categories}}</p>
-            <p>{{productDetails?.desc}}</p>
-            <div class="quantity-group" *ngIf="!removeCartLink">
-                <button (click)="handleQuantity('min')">-</button>
-                <input type="text" value="{{productQuantity}}">
-                <button (click)="handleQuantity('plus')">+</button>
-            </div>
-            <div>
-                <a (click)="addToCart()" *ngIf="!removeCartLink" class="btn" style="background: #de7906;">Add To
-                    Cart</a>&nbsp;
-                <a (click)="removeFromCart()" *ngIf="removeCartLink" class="btn" style="background: #de7906;">Remove
-                    From Cart</a>&nbsp;
-                <a routerLink="/cart" *ngIf="removeCartLink" class="btn">Go To Cart</a>
+<div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="bg-white rounded">
+            <div class="d-flex flex-row align-items-start">
+                <div class="flex-shrink-0 p-3 mx-3"><img src="{{productDetails?.image}}" alt="" class="img-fluid mb-3" style="max-height: 300px;"></div>
+                <div class="flex-column">
+                    <h5 class="mb-2">{{productDetails?.title}}</h5>
+                    <p class="mb-2">Price: ₹ {{productDetails?.price}}</p>
+                    <p class="mb-2">Category: {{productDetails?.categories}}</p>
+                    <p class="mb-2">{{productDetails?.desc}}</p>
+                    <div class="d-flex align-items-center mb-3" *ngIf="!removeCartLink">
+                        <button class="btn btn-secondary me-2" (click)="handleQuantity('min')">-</button>
+                        <input type="text" value="{{productQuantity}}" class="form-control text-center me-2" style="width: 60px;">
+                        <button class="btn btn-secondary" (click)="handleQuantity('plus')">+</button>
+                    </div>
+                    <div class="d-flex">
+                        <a (click)="addToCart()" *ngIf="!removeCartLink" class="btn btn-warning me-2">Add To Cart</a>
+                        <a (click)="removeFromCart()" *ngIf="removeCartLink" class="btn btn-warning me-2">Remove From Cart</a>
+                        <a routerLink="/cart" *ngIf="removeCartLink" class="btn btn-dark">Go To Cart</a>
+                    </div>
+                </div>
             </div>
         </div>
-
     </div>
-
 </div>

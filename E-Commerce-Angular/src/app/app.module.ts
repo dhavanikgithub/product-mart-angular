@@ -8,12 +8,14 @@ import { CustomerModule } from './customer/customer.module';
 import { HttpClientModule } from '@angular/common/http';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { SignupModule } from './signup/signup.module';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeadersComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

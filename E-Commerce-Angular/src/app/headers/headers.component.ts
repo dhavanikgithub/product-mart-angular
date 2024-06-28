@@ -13,7 +13,7 @@ export class HeadersComponent implements OnInit{
 
   public menuType: string = 'default';
   public userName: string = ''
-  public isHidden: boolean = false
+  public isHidden: boolean = true
   public searchResults: undefined | Product[] 
   public cartCount: number = 0
 

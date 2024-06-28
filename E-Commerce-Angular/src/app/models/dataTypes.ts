@@ -17,7 +17,10 @@ export interface Product{
     image: string,
     size: string,
     quantity?: number,
-    productId: string
+    productId: string,
+    totalRatings: string,
+    ratings: Object[],
+    brand: string
 }
 
 export interface Cart{ 

@@ -1,37 +1,75 @@
-<div class="top-container">
-    <div class="main">  
-		<input type="checkbox" id="chk" aria-hidden="true"> 
-			<div class="signup"> 
-				<form [formGroup]="customerSignupForm" (ngSubmit)="onSignup()">
-					<label for="chk" aria-hidden="true">Sign up</label>
-
-					<input type="text" name="username" placeholder="User Name" formControlName="username">
-					<small class="signup-msg" *ngIf="customerSignupForm.get('username')?.invalid && customerSignupForm.get('username')?.touched">
-						Enter a Valid Username</small>
-
-					<input type="email" name="email" placeholder="Email" formControlName="email">
-					<small class="signup-msg" *ngIf="customerSignupForm.get('email')?.invalid && customerSignupForm.get('email')?.touched">
-						Enter a Valid Email</small>
-
-					<input type="password" name="password" placeholder="Password" formControlName="password">
-					<small class="signup-msg" *ngIf="customerSignupForm.get('password')?.invalid && customerSignupForm.get('password')?.touched">
-						Enter a Valid Password</small>
-
-					<button [disabled]="customerSignupForm.invalid">Sign up</button>
-					<small class="signup-msg">{{signupMsg}}</small>
-				</form>
-			</div>
-
-			<div class="login">
-				<form [formGroup]="customerLoginForm" (ngSubmit)="onLogin()">
-					<label for="chk" aria-hidden="true">Login</label>
-					<input type="email" name="email" placeholder="Email" formControlName="email">
-					<input type="password" name="password" placeholder="Password" formControlName="password">
-					<button>Login</button>
-					<small class="login-msg">{{signupMsg}}</small>
-					<!-- <a routerLink="products">Link</a> -->
-				</form>
-			</div>
-	</div>
+<div class="container-fluid">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-md-5">
+            <!-- Login or Signup Card -->
+            <div class="card p-5 shadow rounded">
+                <div class="pills-container">
+                    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="signup-tab" data-bs-toggle="pill"
+                                data-bs-target="#signup" type="button" role="tab" aria-controls="signup"
+                                aria-selected="true">Sign up</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="login-tab" data-bs-toggle="pill" data-bs-target="#login"
+                                type="button" role="tab" aria-controls="login" aria-selected="false">Login</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-content" id="pills-tabContent">
+                    <!-- Signup Section -->
+                    <div class="tab-pane fade show active" id="signup" role="tabpanel" aria-labelledby="signup-tab">
+                        <form [formGroup]="customerSignupForm" (ngSubmit)="onSignup()">
+                            <label for="username"
+                                class="form-label text-dark fs-3 d-flex justify-content-center mb-4 cursor-pointer">Sign
+                                up</label>
+                            <div class="mb-3">
+                                <input type="text" id="username" name="username" class="form-control"
+                                    placeholder="User Name" formControlName="username"
+                                    [class.is-invalid]="customerSignupForm.get('username')?.invalid && customerSignupForm.get('username')?.touched">
+                                <div *ngIf="customerSignupForm.get('username')?.invalid && customerSignupForm.get('username')?.touched"
+                                    class="invalid-feedback">
+                                    Enter a Valid Username
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <input type="email" id="email" name="email" class="form-control" placeholder="Email"
+                                    formControlName="email"
+                                    [class.is-invalid]="customerSignupForm.get('email')?.invalid && customerSignupForm.get('email')?.touched">
+                                <div *ngIf="customerSignupForm.get('email')?.invalid && customerSignupForm.get('email')?.touched"
+                                    class="invalid-feedback">
+                                    Enter a Valid Email
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <input type="password" id="password" name="password" class="form-control"
+                                    placeholder="Password" formControlName="password"
+                                    [class.is-invalid]="customerSignupForm.get('password')?.invalid && customerSignupForm.get('password')?.touched">
+                                <div *ngIf="customerSignupForm.get('password')?.invalid && customerSignupForm.get('password')?.touched"
+                                    class="invalid-feedback">
+                                    Enter a Valid Password
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary" [disabled]="customerSignupForm.invalid">Sign
+                                up</button>
+                            <small class="signup-msg text-dark">{{signupMsg}}</small>
+                        </form>
+                    </div>
+                    <!-- Login Section -->
+                    <div class="tab-pane fade" id="login" role="tabpanel" aria-labelledby="login-tab">
+                        <form [formGroup]="customerLoginForm" (ngSubmit)="onLogin()">
+                            <label for="email"
+                                class="form-label text-primary fs-3 d-flex justify-content-center mb-4 cursor-pointer">Login</label>
+                            <input type="email" id="email" name="email" class="form-control mb-3" placeholder="Email"
+                                formControlName="email">
+                            <input type="password" id="password" name="password" class="form-control mb-3"
+                                placeholder="Password" formControlName="password">
+                            <button type="submit" class="btn btn-primary">Login</button>
+                            <small class="login-msg text-dark">{{signupMsg}}</small>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-
