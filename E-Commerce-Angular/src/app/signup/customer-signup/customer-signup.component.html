@@ -2,7 +2,7 @@
     <div class="row justify-content-center align-items-center">
         <div class="col-md-5">
             <!-- Login or Signup Card -->
-            <div class="card p-5 shadow rounded">
+            <div class="card p-5 shadow rounded scale-up-center">
                 <div class="pills-container">
                     <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                         <li class="nav-item" role="presentation">
@@ -50,9 +50,9 @@
                                     Enter a Valid Password
                                 </div>
                             </div>
+                            <div class="signup-msg text-dark">{{signupMsg}}</div>
                             <button type="submit" class="btn btn-primary" [disabled]="customerSignupForm.invalid">Sign
                                 up</button>
-                            <small class="signup-msg text-dark">{{signupMsg}}</small>
                         </form>
                     </div>
                     <!-- Login Section -->
@@ -64,8 +64,8 @@
                                 formControlName="email">
                             <input type="password" id="password" name="password" class="form-control mb-3"
                                 placeholder="Password" formControlName="password">
+                            <div class="login-msg text-dark mb-2">{{loginMsg}}</div>
                             <button type="submit" class="btn btn-primary">Login</button>
-                            <small class="login-msg text-dark">{{signupMsg}}</small>
                         </form>
                     </div>
                 </div>

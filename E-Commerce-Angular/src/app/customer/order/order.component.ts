@@ -15,6 +15,7 @@ export class OrderComponent implements OnInit{
   constructor(private shopService: ShopService){}
 
   ngOnInit(): void {
+    window.scrollTo(0,0)
     this.getOrders()
   }
 

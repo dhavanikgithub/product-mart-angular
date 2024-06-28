@@ -35,3 +35,9 @@ h5 {
 .para {
     font-size: 16px
 }
+.product-item{
+    transition: .7s;
+}
+.product-item:hover {
+    --bs-border-color: #333333;
+}

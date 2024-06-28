@@ -21,6 +21,7 @@ export class HeadersComponent implements OnInit{
     private customerSignupService: CustomerSignupService, private shopService: ShopService){}
 
   ngOnInit(): void {
+    this.isHidden = true
     this.router.events.subscribe((res:any)=>{
       if(res.url){
         let customerStore = localStorage.getItem('customer')

@@ -14,6 +14,7 @@ export class ShopComponent implements OnInit{
   constructor(private shopService: ShopService){}
 
   ngOnInit(): void {
+    window.scrollTo(0,0)
     this.shopService.trendyProducts().subscribe((res)=>{
       if(res && res.length){
         this.shopProducts = res

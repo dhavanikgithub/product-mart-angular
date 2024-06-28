@@ -13,6 +13,7 @@ import { ShopService } from '../../services/shop.service';
 export class CustomerSignupComponent implements OnInit{
 
   public signupMsg: string = ''
+  public loginMsg: string = ''
 
   constructor(private fb: FormBuilder, private router: Router, private signupService: CustomerSignupService,
     private shopService: ShopService){}
@@ -29,7 +30,7 @@ export class CustomerSignupComponent implements OnInit{
   })
 
   ngOnInit(): void {
-    this.signupService.reloadNew()
+    this.signupService.reloadNew(localStorage.getItem('customer'))
   }
 
   onSignup(){
@@ -55,7 +56,7 @@ export class CustomerSignupComponent implements OnInit{
     this.signupService.signupMsg.subscribe((res)=>{
       if(res){
         // console.log(res);
-        this.signupMsg = "Please Enter Valid Credentails"
+        this.loginMsg = "Please Enter Valid Credentails"
         this.customerLoginForm.reset()
       }
       

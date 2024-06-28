@@ -53,16 +53,12 @@ export class CheckoutComponent implements OnInit{
         if(res){
           this.orderMsg = 'Your Order Has Been Successfully Placed'
         }
-        setTimeout(() => {  
-          this.shopService.emptyCart().subscribe((res)=>{
-            if(res){
-              console.log(res);
-              
-              this.shopService.getCartCount()
-            }
-          })
+        this.shopService.emptyCart().subscribe((res)=>{
+          if(res){
+            this.shopService.getCartCount()
+          }
           this.router.navigate(['/orders'])
-        }, 4000);
+        })
       })
     }
     

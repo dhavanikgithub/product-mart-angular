@@ -61,8 +61,8 @@ export class CustomerSignupService {
     })
   }
 
-  reloadNew(){
-    if(localStorage.getItem('customer')){
+  reloadNew(customerInfo:string|null){
+    if(customerInfo){
       console.log(localStorage.getItem('customer'))
       this.isCustomerLoggedIn.next(true)
       this.router.navigate(['/'])

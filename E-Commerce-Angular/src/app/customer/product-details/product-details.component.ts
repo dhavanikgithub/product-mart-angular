@@ -19,6 +19,7 @@ export class ProductDetailsComponent implements OnInit{
   constructor(private shopService: ShopService, private activatedRoute: ActivatedRoute, private router: Router){}
 
   ngOnInit(): void {
+    window.scrollTo(0,0)
     this.activatedRoute.params.subscribe((params)=>{
       this.productId = params?.['_id']
       this.productId && this.shopService.getProduct(this.productId).subscribe((res)=>{

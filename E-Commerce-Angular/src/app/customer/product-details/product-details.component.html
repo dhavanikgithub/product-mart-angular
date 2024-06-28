@@ -2,21 +2,23 @@
     <div class="row justify-content-center">
         <div class="bg-white rounded">
             <div class="d-flex flex-row align-items-start">
-                <div class="flex-shrink-0 p-3 mx-3"><img src="{{productDetails?.image}}" alt="" class="img-fluid mb-3" style="max-height: 300px;"></div>
+                <div class="flex-shrink-0 p-3 mx-3 scale-up-center"><img src="{{productDetails?.image}}" alt="" class="img-fluid mb-3" style="max-height: 300px;"></div>
                 <div class="flex-column">
-                    <h5 class="mb-2">{{productDetails?.title}}</h5>
-                    <p class="mb-2">Price: ₹ {{productDetails?.price}}</p>
-                    <p class="mb-2">Category: {{productDetails?.categories}}</p>
+                    <div class="tracking-in-contract">
+                        <h5 class="mb-2 tracking-in-contract">{{productDetails?.title}}</h5>
+                        <p class="mb-2">Price: ₹ {{productDetails?.price}}</p>
+                        <p class="mb-2">Category: {{productDetails?.categories}}</p>
+                    </div>
                     <p class="mb-2">{{productDetails?.desc}}</p>
                     <div class="d-flex align-items-center mb-3" *ngIf="!removeCartLink">
-                        <button class="btn btn-secondary me-2" (click)="handleQuantity('min')">-</button>
-                        <input type="text" value="{{productQuantity}}" class="form-control text-center me-2" style="width: 60px;">
-                        <button class="btn btn-secondary" (click)="handleQuantity('plus')">+</button>
+                        <button class="btn btn-secondary me-2 scale-up-center" (click)="handleQuantity('min')">-</button>
+                        <input type="text" value="{{productQuantity}}" class="form-control text-center me-2 scale-up-center" style="width: 60px;">
+                        <button class="btn btn-secondary scale-up-center" (click)="handleQuantity('plus')">+</button>
                     </div>
                     <div class="d-flex">
-                        <a (click)="addToCart()" *ngIf="!removeCartLink" class="btn btn-warning me-2">Add To Cart</a>
-                        <a (click)="removeFromCart()" *ngIf="removeCartLink" class="btn btn-warning me-2">Remove From Cart</a>
-                        <a routerLink="/cart" *ngIf="removeCartLink" class="btn btn-dark">Go To Cart</a>
+                        <a (click)="addToCart()" *ngIf="!removeCartLink" class="btn btn-warning me-2 scale-up-center">Add To Cart</a>
+                        <a (click)="removeFromCart()" *ngIf="removeCartLink" class="btn btn-warning me-2 scale-up-center">Remove From Cart</a>
+                        <a routerLink="/cart" *ngIf="removeCartLink" class="btn btn-dark scale-up-center">Go To Cart</a>
                     </div>
                 </div>
             </div>
