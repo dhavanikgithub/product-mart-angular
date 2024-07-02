@@ -10,7 +10,6 @@ import { ShopService } from './shop.service';
 })
 export class CustomerSignupService {
 
-  public replaceUrl = 'http://localhost:5000/'
   public url = 'http://localhost:8000/'
   public signupMsg = new EventEmitter<boolean>(false)
   public isCustomerLoggedIn = new BehaviorSubject<boolean>(false)

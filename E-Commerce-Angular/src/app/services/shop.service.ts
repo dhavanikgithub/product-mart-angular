@@ -8,7 +8,6 @@ import { catchError, throwError } from 'rxjs';
 })
 export class ShopService {
 
-  public replaceUrl = 'http://localhost:5000/'
   public url = 'http://localhost:8000/'
 
   public cartDataLength = new EventEmitter<Product[] | []>()

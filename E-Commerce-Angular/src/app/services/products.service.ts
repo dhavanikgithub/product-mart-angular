@@ -8,7 +8,6 @@ import { Product } from '../models/dataTypes';
 })
 export class ProductsService {
 
-  public replaceUrl = 'http://localhost:5000/'
   public url = 'http://localhost:8000/'
 
   constructor(private http: HttpClient) { }

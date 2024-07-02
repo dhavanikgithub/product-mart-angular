@@ -56,7 +56,7 @@ export class CustomerSignupComponent implements OnInit{
     this.signupService.signupMsg.subscribe((res)=>{
       if(res){
         // console.log(res);
-        this.loginMsg = "Please Enter Valid Credentails"
+        this.loginMsg = "Please Enter Valid Credentials"
         this.customerLoginForm.reset()
       }
       
